@@ -11,8 +11,20 @@ const tuitController = (app) => {
 
 const createTuit = (req, res) => {
     const newTuit = req.body;
+
     newTuit._id = (new Date()).getTime() + '';
-    newTuit.likes = 0;
+    newTuit.topic = "";
+    newTuit.postedBy = {"username": "Dani"};
+    newTuit.handle = "tolliverdani";
+    newTuit.liked = false;
+    newTuit.verified = false;
+    newTuit.title = "";
+    newTuit.time = "now";
+    newTuit["logo-image"] = "../images/profilePicture.jpg";
+    newTuit["avatar-image"] = "../images/profilePicture.jpg";
+    newTuit.tuits = "122K";
+    newTuit.stats = {"comments" : 0, "retuits": 0, "dislikes": 0, "likes": 0};
+
     tuits.push(newTuit);
     res.json(newTuit);
 }
